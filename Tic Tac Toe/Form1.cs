@@ -17,5 +17,64 @@ namespace Tic_Tac_Toe
             InitializeComponent();
         }
 
+        String[] board = new string[8];
+        int myTurn = 0;
+        public String returnSymbol(int turn)
+        {
+            if (turn % 2 == 0)
+            {
+                return "O";
+            }
+            else
+            {
+                return "X";
+            }
+        }
+            
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
