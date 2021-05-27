@@ -17,7 +17,7 @@ namespace Tic_Tac_Toe
             InitializeComponent();
         }
 
-        String[] board = new string[8];
+        String[] board = new string[10];
         int myTurn = 0;
         public String returnSymbol(int turn)
         {
@@ -31,50 +31,122 @@ namespace Tic_Tac_Toe
             }
         }
             
-        
+        public void Winner()
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                String combination = "";
+
+                switch(i)
+                {
+                    case 0:
+                        combination = board[0] + board[4] + board[8];
+                        break;
+                    case 1:
+                        combination = board[2] + board[4] + board[6];
+                        break;
+                    case 2:
+                        combination = board[0] + board[1] + board[2];
+                        break;
+                    case 3:
+                        combination = board[3] + board[4] + board[5];
+                        break;
+                    case 4:
+                        combination = board[6] + board[7] + board[8];
+                        break;
+                    case 5:
+                        combination = board[0] + board[3] + board[6];
+                        break;
+                    case 6:
+                        combination = board[2] + board[4] + board[7];
+                        break;
+                    case 7:
+                        combination = board[3] + board[5] + board[8];
+                        break;
+                }
+
+                if(combination.Equals("XXX"))
+                {
+                    MessageBox.Show("X wins! ", "We have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if(combination.Equals("OOO"))
+                {
+                    MessageBox.Show("O wins! ", "We have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+                
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            myTurn++;
+            board[0] = returnSymbol(myTurn);
+            button1.Text = board[0];
+            Winner();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[1] = returnSymbol(myTurn);
+            button2.Text = board[1];
+            Winner();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[2] = returnSymbol(myTurn);
+            button3.Text = board[2];
+            Winner();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[3] = returnSymbol(myTurn);
+            button4.Text = board[3];
+            Winner();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[4] = returnSymbol(myTurn);
+            button5.Text = board[4];
+            Winner();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[5] = returnSymbol(myTurn);
+            button6.Text = board[5];
+            Winner();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[6] = returnSymbol(myTurn);
+            button7.Text = board[6];
+            Winner();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[7] = returnSymbol(myTurn);
+            button8.Text = board[7];
+            Winner();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            myTurn++;
+            board[8] = returnSymbol(myTurn);
+            button9.Text = board[8];
+            Winner();
         }
     }
 }
