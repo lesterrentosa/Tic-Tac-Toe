@@ -43,7 +43,7 @@ namespace Tic_Tac_Toe
                         combination = board[1] + board[5] + board[9];
                         break;
                     case 1:
-                        combination = board[2] + board[5] + board[7];
+                        combination = board[3] + board[5] + board[7];
                         break;
                     case 2:
                         combination = board[1] + board[2] + board[3];
@@ -64,7 +64,7 @@ namespace Tic_Tac_Toe
                         combination = board[3] + board[6] + board[9];
                         break;
                 }
-
+                
                 if(combination.Equals("XXX"))
                 {
                     restart();
@@ -75,8 +75,10 @@ namespace Tic_Tac_Toe
                     restart();
                     MessageBox.Show("O wins! ", "We have a Winner", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+
+                draw();
             }
-                
+            
         }
 
         
@@ -97,6 +99,22 @@ namespace Tic_Tac_Toe
             myTurn = 0;
 
         }
+
+        public void draw()
+        {
+            int count = 0;
+            for (int i = 0; i < board.Length; i++)
+            {
+                if (board[i] != null) { count++; }
+
+                if (count == 9)
+                {
+                    restart();
+                    MessageBox.Show("It is a DRAW!", "Draw!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             myTurn++;
@@ -167,6 +185,11 @@ namespace Tic_Tac_Toe
             board[9] = returnSymbol(myTurn);
             button9.Text = board[9];
             Winner();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
